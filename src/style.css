@@ -20,6 +20,7 @@ video {
   background: url("../assets/main.jpg");
   background-size: cover;
   scroll-snap-align: start;
+  position: relative;
 }
 canvas {
   width: 100%;
@@ -28,7 +29,8 @@ canvas {
 }
 img {
   position: absolute;
-  top: 20%;
-  left: 30%;
-  transform: translateX(50%, 50%);
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
 }
