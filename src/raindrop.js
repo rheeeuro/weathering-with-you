@@ -10,7 +10,7 @@ import {
   Scene,
   TextureLoader,
   WebGLRenderer,
-} from "three";
+} from "../node_modules/three/build/three.module";
 
 const scene = new Scene();
 
