@@ -43,8 +43,8 @@ let rain, rainBuffer;
 const RAIN_COUNT = 15000;
 const BG_WIDTH = 3200;
 const BG_HEIGHT = 1800;
-const BG_SRC = "/assets/building-sky.png";
-const SPRITE_SRC = "/assets/raindrop.png";
+const BG_SRC = "./assets/building-sky.png";
+const SPRITE_SRC = "./assets/raindrop.png";
 
 (async function () {
   const loader = new TextureLoader();
