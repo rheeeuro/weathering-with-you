@@ -10,7 +10,7 @@ import {
   Scene,
   TextureLoader,
   WebGLRenderer,
-} from "../node_modules/three/build/three.module.js";
+} from "https://threejs.org/build/three.module.js";
 
 const canvas = document.getElementById("canvas");
 
