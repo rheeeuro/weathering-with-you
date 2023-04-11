@@ -12,41 +12,42 @@ import {
   WebGLRenderer,
 } from "https://threejs.org/build/three.module.js";
 
-const canvas = document.getElementById("canvas");
-
-const scene = new Scene();
-
-const camera = new PerspectiveCamera(
-  60,
-  window.innerWidth / window.innerHeight,
-  1,
-  1000
-);
-camera.position.z = 1;
-camera.rotation.x = 1.16;
-camera.rotation.y = -0.12;
-camera.rotation.z = 0.27;
-
-const ambient = new AmbientLight(0x555555);
-scene.add(ambient);
-
-const directional = new DirectionalLight(0xffeedd);
-directional.position.set(0, 0, 1);
-scene.add(directional);
-
-const renderer = new WebGLRenderer({ canvas: canvas });
-scene.fog = new FogExp2(0x11111f, 0.002);
-renderer.setClearColor(scene.fog.color);
-renderer.setSize(innerWidth, innerHeight);
-
-let rain, rainBuffer;
 const RAIN_COUNT = 15000;
 const BG_WIDTH = 3200;
 const BG_HEIGHT = 1800;
 const BG_SRC = "./assets/building-sky.png";
 const SPRITE_SRC = "./assets/raindrop.png";
 
-(async function () {
+async function init() {
+  const canvas = document.getElementById("canvas");
+
+  const scene = new Scene();
+
+  const camera = new PerspectiveCamera(
+    60,
+    window.innerWidth / window.innerHeight,
+    1,
+    1000
+  );
+  camera.position.z = 1;
+  camera.rotation.x = 1.16;
+  camera.rotation.y = -0.12;
+  camera.rotation.z = 0.27;
+
+  const ambient = new AmbientLight(0x555555);
+  scene.add(ambient);
+
+  const directional = new DirectionalLight(0xffeedd);
+  directional.position.set(0, 0, 1);
+  scene.add(directional);
+
+  const renderer = new WebGLRenderer({ canvas: canvas });
+  scene.fog = new FogExp2(0x11111f, 0.002);
+  renderer.setClearColor(scene.fog.color);
+  renderer.setSize(innerWidth, innerHeight);
+
+  let rain, rainBuffer;
+
   const loader = new TextureLoader();
   const texture = await loader.load(BG_SRC);
   const sprite = loader.load(SPRITE_SRC);
@@ -89,7 +90,7 @@ const SPRITE_SRC = "./assets/raindrop.png";
     }
     renderer.render(scene, camera);
   });
-})();
+}
 
 function setBackground(scene, backgroundImageWidth, backgroundImageHeight) {
   var windowSize = function (withScrollBar) {
@@ -125,3 +126,9 @@ function setBackground(scene, backgroundImageWidth, backgroundImageHeight) {
     scene.background.repeat.y = factor > 1 ? 1 : factor;
   }
 }
+
+window.addEventListener("resize", function () {
+  init();
+});
+
+init();
