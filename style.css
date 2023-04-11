@@ -35,10 +35,30 @@ canvas {
   height: 100%;
   scroll-snap-align: start;
 }
-img {
+#title {
   position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
+}
+#scroll {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  animation: fade 3s ease-in-out infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
