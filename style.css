@@ -20,6 +20,7 @@ audio {
   right: 1%;
   width: 15%;
   height: 5%;
+  z-index: 100;
 }
 
 .videoContainer {
@@ -223,8 +224,8 @@ canvas {
   }
 
   #character {
-    height: 100vh;
-    width: 177.78vh;
+    height: 105vh;
+    width: 186.669vh;
   }
 
   #gunHand {
