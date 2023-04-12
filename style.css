@@ -119,55 +119,52 @@ canvas {
 
 #character {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
   animation: upDown 2s ease-in-out infinite;
   z-index: 1;
+  transform: translate(-50%, -50%);
 }
 
 #gunHand {
   display: absolute;
   top: 30%;
-  left: 30%;
+  left: 48%;
   width: 35%;
   position: absolute;
+  transform: translate(-50%, -50%);
   z-index: 2;
   animation: gunUpDown 0.5s ease-in-out infinite;
 }
 
 @keyframes upDown {
   0% {
-    top: 1%;
+    transform: translate(-50%, -51%);
   }
   50% {
-    top: -1%;
+    transform: translate(-50%, -49%);
   }
   100% {
-    top: 1%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @keyframes gunUpDown {
   0% {
-    top: 30.25%;
-    left: 29.75%;
+    transform: translate(-50.25%, -0.25%);
   }
   25% {
-    top: 29.75%;
-    left: 30.25%;
+    transform: translate(-49.75%, 0%);
   }
   50% {
-    top: 29.75%;
-    left: 29.75%;
+    transform: translate(-50.25%, 0.25%);
   }
   75% {
-    top: 29.75%;
-    left: 30.25%;
+    transform: translate(-49.75%, 0%);
   }
   100% {
-    top: 30.25%;
-    left: 29.75%;
+    transform: translate(-50.25%, -0.25%);
   }
 }
 
@@ -211,5 +208,14 @@ canvas {
     top: 40%;
     left: 80%;
     width: 200vh;
+  }
+
+  #character {
+    height: 100vh;
+    width: 177.78vh;
+  }
+
+  #gunHand {
+    width: 65vh;
   }
 }
