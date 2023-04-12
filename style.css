@@ -52,7 +52,7 @@ audio {
   overflow: hidden;
 }
 
-video {
+.main-video {
   width: 100%;
   height: 100%;
   background: url("assets/main/main.jpg");
@@ -78,6 +78,20 @@ canvas {
   transform: translate(-50%, -50%);
   width: 5%;
   animation: fade 3s ease-in-out infinite;
+}
+
+#shrine {
+  scroll-snap-align: start;
+  width: 100%;
+  height: 1000vh;
+  position: relative;
+}
+.shrine-frame-img {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
 }
 
 #sunshine {
@@ -208,9 +222,9 @@ canvas {
     height: 100vh;
     position: relative;
   }
-  video {
+  .main-video {
     height: 100vh;
-    width: 177.78vw;
+    width: 177.78vh;
     position: absolute;
     left: 50%; /* % of surrounding element */
     top: 50%;
@@ -229,6 +243,9 @@ canvas {
   }
   #scroll {
     width: 15%;
+  }
+  .shrine-frame-img {
+    height: 100vh;
   }
   #sunshine {
     background-position: 30% 0%;

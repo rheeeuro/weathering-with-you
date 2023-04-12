@@ -10,18 +10,28 @@
   </head>
   <body>
     <div class="videoContainer">
-      <video playsinline autoplay muted loop poster="./assets/main/main.jpg">
+      <video
+        class="main-video"
+        playsinline
+        autoplay
+        muted
+        loop
+        poster="./assets/main/main.jpg"
+      >
         <source src="./assets/main/main.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <audio controls>
-        <source src="./assets/grand-escape-piano.mp3" type="audio/mpeg" />
+        <source src="./assets/grand-escape.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       <img id="title" src="./assets/main/text.png" />
       <img id="scroll" src="./assets/main/arrow-down.png" />
     </div>
     <canvas id="raindrop"></canvas>
+    <div id="shrine">
+      <img class="shrine-frame-img" src="./assets/shrine/frame/frame-101.jpg" />
+    </div>
     <div id="sunshine">
       <img id="hand" src="./assets/sunshine/hand.jpg" />
       <img id="flare" src="./assets/sunshine/flare.png" />
@@ -48,6 +58,7 @@
       />
     </svg>
     <script src="main.js"></script>
+    <script src="shrine.js"></script>
     <script src="sunflare.js"></script>
     <script type="module" src="raindrop.js"></script>
   </body>
