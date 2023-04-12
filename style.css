@@ -14,6 +14,15 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 audio {
   position: fixed;
   top: 2%;
