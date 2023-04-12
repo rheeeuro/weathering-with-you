@@ -140,10 +140,10 @@ canvas {
 
 @keyframes upDown {
   0% {
-    transform: translate(-50%, -51%);
+    transform: translate(-50%, -50%);
   }
   50% {
-    transform: translate(-50%, -49%);
+    transform: translate(-50%, -48%);
   }
   100% {
     transform: translate(-50%, -50%);
