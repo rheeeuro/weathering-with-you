@@ -63,6 +63,7 @@ canvas {
   scroll-snap-align: start;
   position: relative;
   background: url("assets/sunshine/sunshine-sky.jpg");
+  transform: scaleX(-1);
   overflow: hidden;
 }
 
@@ -70,7 +71,7 @@ canvas {
   position: absolute;
   bottom: -60%;
   right: -30%;
-  transform: translate(-55%, -45%);
+  transform: translate(-60%, -45%) scaleX(-1);
   width: 90%;
   z-index: 1;
   transition: transform 1s ease-out;
@@ -130,5 +131,23 @@ canvas {
   }
   #scroll {
     width: 15%;
+  }
+  #sunshine {
+    background-position: 30% 0%;
+  }
+  #flare {
+    top: 0%;
+    left: -60%;
+    transform: scaleX(-1);
+  }
+  #flare2 {
+    top: 0%;
+    left: -60%;
+    transform: scaleX(-1);
+  }
+  #hand {
+    top: 40%;
+    left: 80%;
+    width: 200vh;
   }
 }
