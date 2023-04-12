@@ -23,6 +23,19 @@ audio {
   z-index: 100;
 }
 
+#backToTop {
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  width: 5%;
+  height: 5%;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
 .videoContainer {
   scroll-snap-align: start;
   width: 100%;
@@ -197,6 +210,10 @@ canvas {
   }
   audio {
     width: 35%;
+  }
+  #backToTop {
+    right: 5%;
+    bottom: 3%;
   }
   #title {
     width: 70%;

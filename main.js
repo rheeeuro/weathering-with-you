@@ -1,5 +1,7 @@
 const videoContainer = document.querySelector(".videoContainer");
 const title = document.getElementById("title");
+const backToTop = document.getElementById("backToTop");
+
 const LERP_ALPHA = 0.5;
 
 let titlePos = {
@@ -18,6 +20,19 @@ videoContainer.addEventListener("mousemove", (e) => {
 videoContainer.addEventListener("mouseout", (e) => {
   titlePos.x = titlePos.x * (1 - LERP_ALPHA) + -50 * LERP_ALPHA;
   titlePos.y = titlePos.y * (1 - LERP_ALPHA) + -50 * LERP_ALPHA;
+});
+
+backToTop.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.addEventListener("scroll", (event) => {
+  const y = window.scrollY;
+  if (y >= innerHeight) {
+    backToTop.style.opacity = 0.7;
+  } else {
+    backToTop.style.opacity = 0;
+  }
 });
 
 setInterval(function () {
