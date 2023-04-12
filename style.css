@@ -108,6 +108,68 @@ canvas {
     opacity: 1;
   }
 }
+#gun {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  background: url("assets/gun/bg.jpg");
+  overflow: hidden;
+}
+
+#character {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: upDown 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+#gunHand {
+  display: absolute;
+  top: 30%;
+  left: 30%;
+  width: 35%;
+  position: absolute;
+  z-index: 2;
+  animation: gunUpDown 0.5s ease-in-out infinite;
+}
+
+@keyframes upDown {
+  0% {
+    top: 1%;
+  }
+  50% {
+    top: -1%;
+  }
+  100% {
+    top: 1%;
+  }
+}
+
+@keyframes gunUpDown {
+  0% {
+    top: 30.25%;
+    left: 29.75%;
+  }
+  25% {
+    top: 29.75%;
+    left: 30.25%;
+  }
+  50% {
+    top: 29.75%;
+    left: 29.75%;
+  }
+  75% {
+    top: 29.75%;
+    left: 30.25%;
+  }
+  100% {
+    top: 30.25%;
+    left: 29.75%;
+  }
+}
 
 @media (max-aspect-ratio: 3840/2160) {
   .videoContainer {
