@@ -28,7 +28,7 @@ let currentFrame;
 function init() {
   window.addEventListener("scroll", function () {
     progress =
-      (window.pageYOffset - window.innerHeight * 3) / (window.innerHeight * 8);
+      (window.pageYOffset - window.innerHeight * 2) / (window.innerHeight * 8);
     console.log(progress, window.pageYOffset - window.innerHeight * 2);
     if (progress < 0) progress = 0;
     if (progress > 1) progress = 1;
