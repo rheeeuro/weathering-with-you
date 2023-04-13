@@ -21,12 +21,20 @@
         <source src="./assets/main/main.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <audio controls>
-        <source src="./assets/grand-escape.mp3" type="audio/mpeg" />
+      <audio id="bg-music" controls>
+        <source
+          id="bg-music-src"
+          src="./assets/music/1.mp3"
+          type="audio/mpeg"
+        />
         Your browser does not support the audio element.
       </audio>
       <img id="title" src="./assets/main/text.png" />
       <img id="scroll" src="./assets/main/arrow-down.png" />
+      <div id="music-info">
+        <h1 id="music-title">Grand Escape</h1>
+        <p id="music-artist">RADWIMPS (feat. Toko Miura)</p>
+      </div>
     </div>
     <canvas id="raindrop"></canvas>
     <div id="shrine">
@@ -57,6 +65,7 @@
         d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
       />
     </svg>
+    <script src="music.js"></script>
     <script src="main.js"></script>
     <script src="shrine.js"></script>
     <script src="sunflare.js"></script>
