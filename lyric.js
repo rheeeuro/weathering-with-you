@@ -36,6 +36,12 @@ setInterval(function () {
         pronunciation.innerText = data[i].pronunciation;
         korean.innerText = data[i].korean;
 
+        lyric.classList.remove("fade");
+
+        // trigger a DOM reflow
+        void lyric.offsetWidth;
+
+        lyric.classList.add("fade");
         break;
       }
     }
