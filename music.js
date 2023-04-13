@@ -24,7 +24,6 @@ window.addEventListener("scroll", function () {
   for (let i = 0; i < offset.length; i++) {
     if (Math.abs(window.pageYOffset - offset[i] * window.innerHeight) <= 5) {
       musicSrc.src = `./assets/music/${i + 1}.mp3`;
-      console.log(i + 1, "start");
       music.load();
 
       musicTitle.innerHTML = TITLE[i];
