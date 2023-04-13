@@ -72,6 +72,12 @@ export const lyric_01 = [
     korean: "너는 너인채로 있었던 거야",
   },
   {
+    time: 115,
+    original: "",
+    pronunciation: "",
+    korean: "",
+  },
+  {
     time: 120,
     original: "重力が眠りにつく １０００年に一度の今日",
     pronunciation: "쥬-료쿠가 네무리니츠쿠 센넨니 이치도노 쿄- ",
@@ -102,16 +108,34 @@ export const lyric_01 = [
     korean: "가자",
   },
   {
+    time: 148,
+    original: "",
+    pronunciation: "",
+    korean: "",
+  },
+  {
     time: 152,
     original: "行こう",
     pronunciation: "이코-",
     korean: "가자",
   },
   {
+    time: 154.5,
+    original: "",
+    pronunciation: "",
+    korean: "",
+  },
+  {
     time: 158.5,
     original: "行こう",
     pronunciation: "이코-",
     korean: "가자",
+  },
+  {
+    time: 161,
+    original: "",
+    pronunciation: "",
+    korean: "",
   },
   {
     time: 172.5,
