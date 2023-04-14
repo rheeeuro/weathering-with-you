@@ -1,5 +1,5 @@
-body::-webkit-scrollbar {
-  display: none;
+html {
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -10,8 +10,9 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-html {
-  scroll-snap-type: y mandatory;
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 img {
@@ -23,6 +24,11 @@ img {
   -ms-user-select: none;
 }
 
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
 audio {
   position: fixed;
   top: 2%;
@@ -32,7 +38,23 @@ audio {
   z-index: 100;
 }
 
-#backToTop {
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 
+ Layout
+*/
+
+#button-top {
   position: fixed;
   bottom: 5%;
   right: 3%;
@@ -45,7 +67,11 @@ audio {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
-#music-info {
+/* 
+ bgm-info
+*/
+
+#bgm-info {
   position: fixed;
   bottom: 2%;
   left: 4%;
@@ -53,17 +79,27 @@ audio {
   text-shadow: #000 1px 0 10px;
 }
 
-#music-title {
+#bgm-info-title {
   color: white;
   font-size: 1.5rem;
-  overflow-wrap: break-word;
+  word-break: keep-all;
+  margin-bottom: 0;
+}
+
+#bgm-info-title-korean {
+  color: white;
+  font-size: 0.8rem;
   word-break: keep-all;
 }
 
-#music-artist {
+#bgm-info-artist {
   color: white;
   font-size: 0.7rem;
 }
+
+/* 
+ lyric
+*/
 
 #lyric {
   position: fixed;
@@ -77,27 +113,13 @@ audio {
   word-break: keep-all;
 }
 
-.fade {
-  animation: lyric-fade 0.3s ease-out;
-}
-
-@keyframes lyric-fade {
-  0% {
-    opacity: 0;
-    filter: blur(20px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-}
-
 #lyric-original {
   color: white;
   font-size: 3rem;
   word-break: keep-all;
   text-align: center;
 }
+
 #lyric-pronunciation {
   color: white;
   font-size: 1rem;
@@ -113,7 +135,26 @@ audio {
   word-break: keep-all;
 }
 
-.videoContainer {
+.lyric-fade {
+  animation: lyric-fade 0.3s ease-out;
+}
+
+@keyframes lyric-fade {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* 
+ main scene
+*/
+
+#scene-main {
   scroll-snap-align: start;
   width: 100vw;
   height: 100vh;
@@ -121,24 +162,14 @@ audio {
   object-fit: cover;
 }
 
-.main-video {
+#main-video {
   width: 100vw;
   background: url("assets/main/main.jpg");
   background-size: cover;
   position: relative;
 }
 
-.canvasContainer {
-  width: 100vw;
-  height: 100vh;
-  scroll-snap-align: start;
-}
-
-canvas {
-  width: 100%;
-  height: 100%;
-}
-#title {
+#main-title {
   position: absolute;
   top: 35%;
   left: 50%;
@@ -147,22 +178,38 @@ canvas {
   word-wrap: normal;
   word-break: keep-all;
 }
-#scroll {
+
+#main-scroll {
   position: absolute;
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 5%;
-  animation: fade 3s ease-in-out infinite;
+  animation: fadeInOut 3s ease-in-out infinite;
 }
 
-#shrine {
+/* 
+ raindrop scene
+*/
+
+#scene-raindrop {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* 
+ raindrop shrine
+*/
+
+#scene-shrine {
   scroll-snap-align: start;
   width: 100%;
   height: 1000vh;
   position: relative;
 }
-.shrine-frame-img {
+
+#shrine-img-frame {
   position: sticky;
   top: 0;
   left: 0;
@@ -170,7 +217,11 @@ canvas {
   object-fit: cover;
 }
 
-#sunshine {
+/* 
+ sunshine shrine
+*/
+
+#scene-sunshine {
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
@@ -180,7 +231,7 @@ canvas {
   overflow: hidden;
 }
 
-#hand {
+#sunshine-hand {
   position: absolute;
   bottom: -60%;
   right: -30%;
@@ -189,13 +240,15 @@ canvas {
   z-index: 1;
   transition: transform 1s ease-out;
 }
-#flare {
+
+#sunshine-flare {
   position: absolute;
   top: -20%;
   left: 0%;
   width: 160%;
 }
-#flare2 {
+
+#sunshine-flare2 {
   position: absolute;
   top: -20%;
   left: 0%;
@@ -203,37 +256,19 @@ canvas {
   opacity: 0.3;
   z-index: 2;
 }
-#flareEffect {
+
+#sunshine-flareEffect {
   position: absolute;
   width: 100%;
   height: 100%;
-  animation: flareEffect 5s ease-in-out infinite;
+  animation: fadeInOut 5s ease-in-out infinite;
 }
 
-@keyframes flareEffect {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+/* 
+ gun shrine
+*/
 
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-#gun {
+#scene-gun {
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
@@ -242,17 +277,17 @@ canvas {
   overflow: hidden;
 }
 
-#character {
+#gun-character {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
-  animation: upDown 2s ease-in-out infinite;
+  animation: gun-character-upDown 2s ease-in-out infinite;
   z-index: 1;
   transform: translate(-50%, -50%);
 }
 
-#gunHand {
+#gun-hand {
   display: absolute;
   top: 30%;
   left: 48%;
@@ -260,10 +295,10 @@ canvas {
   position: absolute;
   transform: translate(-50%, -50%);
   z-index: 2;
-  animation: gunUpDown 0.5s ease-in-out infinite;
+  animation: gun-hand-UpDown 0.5s ease-in-out infinite;
 }
 
-@keyframes upDown {
+@keyframes gun-character-upDown {
   0% {
     transform: translate(-50%, -50%);
   }
@@ -275,7 +310,7 @@ canvas {
   }
 }
 
-@keyframes gunUpDown {
+@keyframes gun-hand-UpDown {
   0% {
     transform: translate(-50.25%, -0.25%);
   }
@@ -293,12 +328,34 @@ canvas {
   }
 }
 
+/* 
+ mobile
+*/
+
 @media (max-aspect-ratio: 3840/2160) {
-  .videoContainer {
+  audio {
+    width: 70%;
+  }
+
+  #button-top {
+    right: 5%;
+    bottom: 3%;
+  }
+  #lyric-original {
+    font-size: 1.5rem;
+  }
+  #lyric-pronunciation {
+    font-size: 0.5rem;
+  }
+  #lyric-korean {
+    font-size: 1rem;
+  }
+
+  #scene-main {
     height: 100vh;
     position: relative;
   }
-  .main-video {
+  #main-video {
     height: 100vh;
     width: 177.78vh;
     position: absolute;
@@ -307,57 +364,41 @@ canvas {
     transform: translate(-50%, -50%);
     object-fit: cover;
   }
-  audio {
+  #main-title {
     width: 70%;
   }
-  #backToTop {
-    right: 5%;
-    bottom: 3%;
-  }
-  #title {
-    width: 70%;
-  }
-  #scroll {
+  #main-scroll {
     width: 15%;
   }
-  #lyric-original {
-    font-size: 1.5rem;
-  }
-  #lyric-pronunciation {
-    font-size: 0.5rem;
-  }
 
-  #lyric-korean {
-    font-size: 1rem;
-  }
-  .shrine-frame-img {
+  #shrine-img-frame {
     height: 100vh;
   }
-  #sunshine {
+
+  #scene-sunshine {
     background-position: 30% 0%;
   }
-  #flare {
+  #sunshine-flare {
     top: 0%;
     left: -60%;
     transform: scaleX(-1);
   }
-  #flare2 {
+  #sunshine-flare2 {
     top: 0%;
     left: -60%;
     transform: scaleX(-1);
   }
-  #hand {
+  #sunshine-hand {
     top: 40%;
     left: 80%;
     width: 200vh;
   }
 
-  #character {
+  #gun-character {
     height: 105vh;
     width: 186.669vh;
   }
-
-  #gunHand {
+  #gun-hand {
     width: 65vh;
   }
 }

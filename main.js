@@ -1,6 +1,6 @@
-const videoContainer = document.querySelector(".videoContainer");
-const title = document.getElementById("title");
-const backToTop = document.getElementById("backToTop");
+const videoContainer = document.getElementById("scene-main");
+const title = document.getElementById("main-title");
+const backToTop = document.getElementById("button-top");
 
 const LERP_ALPHA = 0.5;
 

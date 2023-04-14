@@ -1,5 +1,5 @@
-const sunshine = document.getElementById("sunshine");
-const hand = document.getElementById("hand");
+const sunshine = document.getElementById("scene-sunshine");
+const hand = document.getElementById("sunshine-hand");
 // const effect = document.getElementById("flareEffect");
 
 sunshine.addEventListener("mouseenter", (e) => {

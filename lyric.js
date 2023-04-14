@@ -8,10 +8,10 @@ const lyric = document.getElementById("lyric");
 const original = document.getElementById("lyric-original");
 const pronunciation = document.getElementById("lyric-pronunciation");
 const korean = document.getElementById("lyric-korean");
-const mainTitle = document.getElementById("title");
+const mainTitle = document.getElementById("main-title");
 
-const audio = document.getElementById("bg-music");
-const audioSrc = document.getElementById("bg-music-src");
+const audio = document.getElementById("bgm");
+const audioSrc = document.getElementById("bgm-src");
 
 let data = null;
 
@@ -41,6 +41,7 @@ audio.addEventListener("timeupdate", function (e) {
 });
 
 audio.addEventListener("seeking", function () {
+  mainTitle.style.display = "none";
   original.innerText = "";
   pronunciation.innerText = "";
   korean.innerText = "";
@@ -48,9 +49,11 @@ audio.addEventListener("seeking", function () {
 
 window.addEventListener("scroll", function () {
   mainTitle.style.display = "block";
-  original.innerText = "";
-  pronunciation.innerText = "";
-  korean.innerText = "";
+  if (audioSrc.src.slice(-5)[0] !== "3") {
+    original.innerText = "";
+    pronunciation.innerText = "";
+    korean.innerText = "";
+  }
 });
 
 setInterval(function () {
@@ -69,12 +72,12 @@ setInterval(function () {
         korean.innerText = data[i].korean;
 
         if (Math.abs(data[i].time - audio.currentTime) < 0.1) {
-          lyric.classList.remove("fade");
+          lyric.classList.remove("lyric-fade");
 
           // trigger a DOM reflow
           void lyric.offsetWidth;
 
-          lyric.classList.add("fade");
+          lyric.classList.add("lyric-fade");
         }
         break;
       }

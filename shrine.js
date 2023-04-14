@@ -1,4 +1,4 @@
-const image = document.querySelector(".shrine-frame-img");
+const image = document.getElementById("shrine-img-frame");
 
 let loadedImageCount = 0;
 let totalImageCount = 136;

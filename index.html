@@ -9,47 +9,8 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
   </head>
   <body>
-    <div class="videoContainer">
-      <video
-        class="main-video"
-        playsinline
-        autoplay
-        muted
-        loop
-        poster="./assets/main/main.jpg"
-      >
-        <source src="./assets/main/main.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <audio id="bg-music" controls>
-        <source
-          id="bg-music-src"
-          src="./assets/music/1.mp3"
-          type="audio/mpeg"
-        />
-        Your browser does not support the audio element.
-      </audio>
-      <img id="title" src="./assets/main/text.png" />
-      <img id="scroll" src="./assets/main/arrow-down.png" />
-    </div>
-    <div class="canvasContainer">
-      <canvas id="raindrop"></canvas>
-    </div>
-    <div id="shrine">
-      <img class="shrine-frame-img" src="./assets/shrine/frame/frame-101.jpg" />
-    </div>
-    <div id="sunshine">
-      <img id="hand" src="./assets/sunshine/hand.jpg" />
-      <img id="flare" src="./assets/sunshine/flare.png" />
-      <img id="flare2" src="./assets/sunshine/flare.png" />
-      <img id="flareEffect" src="./assets/sunshine/flare2.png" />
-    </div>
-    <div id="gun">
-      <img id="character" src="./assets/gun/character.png" />
-      <img id="gunHand" src="./assets/gun/gun.png" />
-    </div>
     <svg
-      id="backToTop"
+      id="button-top"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -63,15 +24,53 @@
         d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
       />
     </svg>
-    <div id="music-info">
-      <h1 id="music-title">Grand Escape</h1>
-      <p id="music-artist">RADWIMPS (feat. Toko Miura)</p>
+    <audio id="bgm" controls>
+      <source id="bgm-src" src="./assets/music/1.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <div id="bgm-info">
+      <h1 id="bgm-info-title">Grand Escape</h1>
+      <h1 id="bgm-info-title-korean">그랜드 이스케이프</h1>
+      <p id="bgm-info-artist">RADWIMPS (feat. Toko Miura)</p>
     </div>
     <div id="lyric" class="fade">
       <h1 id="lyric-original"></h1>
       <h1 id="lyric-pronunciation"></h1>
       <p id="lyric-korean"></p>
     </div>
+
+    <div id="scene-main">
+      <video
+        id="main-video"
+        playsinline
+        autoplay
+        muted
+        loop
+        poster="./assets/main/main.jpg"
+      >
+        <source src="./assets/main/main.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <img id="main-title" src="./assets/main/text.png" />
+      <img id="main-scroll" src="./assets/main/arrow-down.png" />
+    </div>
+    <div id="scene-raindrop">
+      <canvas id="canvas-raindrop"></canvas>
+    </div>
+    <div id="scene-shrine">
+      <img id="shrine-img-frame" src="./assets/shrine/frame/frame-101.jpg" />
+    </div>
+    <div id="scene-sunshine">
+      <img id="sunshine-hand" src="./assets/sunshine/hand.jpg" />
+      <img id="sunshine-flare" src="./assets/sunshine/flare.png" />
+      <img id="sunshine-flare2" src="./assets/sunshine/flare.png" />
+      <img id="sunshine-flareEffect" src="./assets/sunshine/flare2.png" />
+    </div>
+    <div id="scene-gun">
+      <img id="gun-character" src="./assets/gun/character.png" />
+      <img id="gun-hand" src="./assets/gun/gun.png" />
+    </div>
+
     <script src="music.js"></script>
     <script type="module" src="lyric.js"></script>
     <script src="main.js"></script>

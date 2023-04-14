@@ -19,7 +19,7 @@ const BG_SRC = "./assets/raindrop/building-sky.png";
 const SPRITE_SRC = "./assets/raindrop/raindrop.png";
 
 async function init() {
-  const canvas = document.getElementById("raindrop");
+  const canvas = document.getElementById("canvas-raindrop");
 
   const scene = new Scene();
 
