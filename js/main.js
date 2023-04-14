@@ -38,3 +38,5 @@ document.addEventListener("scroll", (event) => {
 setInterval(function () {
   title.style.transform = `translate(${titlePos.x}%, ${titlePos.y}%)`;
 }, 10);
+
+document.addEventListener("contextmenu", (event) => event.preventDefault());
