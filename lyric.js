@@ -40,6 +40,12 @@ audio.addEventListener("timeupdate", function (e) {
   }
 });
 
+audio.addEventListener("loadeddata", function () {
+  original.innerText = "";
+  pronunciation.innerText = "";
+  korean.innerText = "";
+});
+
 audio.addEventListener("seeking", function () {
   mainTitle.style.display = "none";
   original.innerText = "";
