@@ -1,8 +1,8 @@
-import { lyric_01 } from "./lyric/01.js";
-import { lyric_02 } from "./lyric/02.js";
-import { lyric_03 } from "./lyric/03.js";
-import { lyric_04 } from "./lyric/04.js";
-import { lyric_05 } from "./lyric/05.js";
+import { lyric_01 } from "./lyrics/01.js";
+import { lyric_02 } from "./lyrics/02.js";
+import { lyric_03 } from "./lyrics/03.js";
+import { lyric_04 } from "./lyrics/04.js";
+import { lyric_05 } from "./lyrics/05.js";
 
 const lyric = document.getElementById("lyric");
 const original = document.getElementById("lyric-original");
