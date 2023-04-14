@@ -10,13 +10,13 @@ import {
   Scene,
   TextureLoader,
   WebGLRenderer,
-} from "./js/three.module.js";
+} from "./three.module.js";
 
 const RAIN_COUNT = 15000;
 const BG_WIDTH = 3200;
 const BG_HEIGHT = 1800;
-const BG_SRC = "./assets/raindrop/building-sky.png";
-const SPRITE_SRC = "./assets/raindrop/raindrop.png";
+const BG_SRC = "../assets/raindrop/building-sky.png";
+const SPRITE_SRC = "../assets/raindrop/raindrop.png";
 
 async function init() {
   const canvas = document.getElementById("canvas-raindrop");
