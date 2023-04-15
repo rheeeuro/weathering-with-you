@@ -38,6 +38,31 @@ audio.addEventListener("timeupdate", function (e) {
       audio.pause();
     }
   }
+
+  if (data) {
+    for (let i = 0; i < data.length; i++) {
+      const duration =
+        i === data.length - 1
+          ? audio.duration - data[i].time
+          : data[i + 1].time - data[i].time;
+      if (
+        data[i].time <= audio.currentTime &&
+        audio.currentTime < data[i].time + duration
+      ) {
+        if (original.innerText !== data[i].original) {
+          original.innerText = data[i].original;
+          pronunciation.innerText = data[i].pronunciation;
+          korean.innerText = data[i].korean;
+
+          lyric.classList.remove("lyric-fade");
+          // trigger a DOM reflow
+          void lyric.offsetWidth;
+          lyric.classList.add("lyric-fade");
+        }
+        break;
+      }
+    }
+  }
 });
 
 audio.addEventListener("loadeddata", function () {
@@ -61,32 +86,3 @@ window.addEventListener("scroll", function () {
     korean.innerText = "";
   }
 });
-
-setInterval(function () {
-  if (data) {
-    for (let i = 0; i < data.length; i++) {
-      const duration =
-        i === data.length - 1
-          ? audio.duration - data[i].time
-          : data[i + 1].time - data[i].time;
-      if (
-        data[i].time <= audio.currentTime &&
-        audio.currentTime < data[i].time + duration
-      ) {
-        original.innerText = data[i].original;
-        pronunciation.innerText = data[i].pronunciation;
-        korean.innerText = data[i].korean;
-
-        if (Math.abs(data[i].time - audio.currentTime) < 0.1) {
-          lyric.classList.remove("lyric-fade");
-
-          // trigger a DOM reflow
-          void lyric.offsetWidth;
-
-          lyric.classList.add("lyric-fade");
-        }
-        break;
-      }
-    }
-  }
-}, 50);
