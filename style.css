@@ -199,7 +199,7 @@ audio {
 }
 
 /* 
- raindrop shrine
+ shrine scene
 */
 
 #scene-shrine {
@@ -218,7 +218,7 @@ audio {
 }
 
 /* 
- sunshine shrine
+ sunshine scene
 */
 
 #scene-sunshine {
@@ -265,7 +265,7 @@ audio {
 }
 
 /* 
- gun shrine
+ gun scene
 */
 
 #scene-gun {
@@ -400,15 +400,5 @@ audio {
   }
   #gun-hand {
     width: 65vh;
-  }
-
-  #water-bg {
-    height: 100vh;
-    width: 177.78vh;
-  }
-
-  .water-drop {
-    height: 700%;
-    width: 200%;
   }
 }
