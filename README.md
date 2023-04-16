@@ -6,6 +6,6 @@
 
 ---
 
-All copyrights belong to the original author
+###### All image copyrights belong to the original author
 
-모든 저작권은 원작자에게 있습니다
+###### 모든 이미지의 저작권은 원작자에게 있습니다
