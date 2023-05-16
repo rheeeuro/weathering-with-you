@@ -80,13 +80,13 @@ export const lyric_01 = [
   {
     time: 120,
     original: "重力が眠りにつく １０００年に一度の今日",
-    pronunciation: "쥬-료쿠가 네무리니츠쿠 센넨니 이치도노 쿄- ",
+    pronunciation: "쥬-료쿠가 네무리니츠쿠 센넨니 이치도노 쿄-",
     korean: "중력이 잠드는 천 년에 한 번 뿐인 오늘",
   },
   {
     time: 126.5,
     original: "太陽の死角に立ち 僕らこの星を出よう",
-    pronunciation: "타이요-노 시카쿠니 타치 보쿠라 코노 호시오 데요- ",
+    pronunciation: "타이요-노 시카쿠니 타치 보쿠라 코노 호시오 데요-",
     korean: "태양의 사각에 서서 우리 이 별을 떠나자",
   },
   {
@@ -187,7 +187,7 @@ export const lyric_01 = [
   },
   {
     time: 227,
-    original: "重力が眠りにつく １０００年に一度の今日 ",
+    original: "重力が眠りにつく １０００年に一度の今日",
     pronunciation: "쥬-료쿠가 네무리니츠쿠 센넨니 이치도노 쿄-",
     korean: "중력이 잠드는 천 년에 한 번 뿐인 오늘",
   },
@@ -301,7 +301,7 @@ export const lyric_01 = [
   },
   {
     time: 292.3,
-    original: "後はどうにかなるさと肩を組んだ ",
+    original: "後はどうにかなるさと肩を組んだ",
     pronunciation: "아토와 도-니카나루사토 카타오 쿤다",
     korean: "이 다음은 어떻게든 되겠지 하며 어깨동무를 했지",
   },
@@ -313,13 +313,13 @@ export const lyric_01 = [
   },
   {
     time: 301.3,
-    original: "ピンチの先回りしたって 僕らじゃしょうがない ",
+    original: "ピンチの先回りしたって 僕らじゃしょうがない",
     pronunciation: "핀치노 사키마와리시탓테 보쿠라쟈 쇼-가나이",
     korean: "위기를 앞질러 갔대도 우리는 어쩔 수 없어",
   },
   {
     time: 307.8,
-    original: "僕らの恋が言う 声が言う ",
+    original: "僕らの恋が言う 声が言う",
     pronunciation: "보쿠라노 코이가 유우 코에가 유우",
     korean: "우리의 사랑이 말해, 목소리가 말해",
   },
