@@ -198,6 +198,12 @@ audio {
   scroll-snap-align: start;
 }
 
+#canvas-raindrop {
+  background: url("assets/raindrop/building-sky.png");
+  background-position: center;
+  background-size: cover;
+}
+
 /* 
  shrine scene
 */

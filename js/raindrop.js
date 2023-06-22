@@ -15,7 +15,6 @@ import {
 const RAIN_COUNT = 15000;
 const BG_WIDTH = 3200;
 const BG_HEIGHT = 1800;
-const BG_SRC = "./assets/raindrop/building-sky.png";
 const SPRITE_SRC = "./assets/raindrop/raindrop.png";
 
 async function init() {
@@ -41,19 +40,18 @@ async function init() {
   directional.position.set(0, 0, 1);
   scene.add(directional);
 
-  const renderer = new WebGLRenderer({ canvas: canvas });
+  const renderer = new WebGLRenderer({
+    canvas: canvas,
+    alpha: true,
+    antialias: true,
+  });
   scene.fog = new FogExp2(0x11111f, 0.002);
-  renderer.setClearColor(scene.fog.color);
   renderer.setSize(innerWidth, innerHeight);
 
   let rain, rainBuffer;
 
   const loader = new TextureLoader();
-  const texture = await loader.load(BG_SRC);
   const sprite = loader.load(SPRITE_SRC);
-
-  scene.background = texture;
-  setBackground(scene, BG_WIDTH, BG_HEIGHT);
 
   rainBuffer = new BufferGeometry();
   let posRain = new Float32Array(RAIN_COUNT * 3);
@@ -90,41 +88,6 @@ async function init() {
     }
     renderer.render(scene, camera);
   });
-}
-
-function setBackground(scene, backgroundImageWidth, backgroundImageHeight) {
-  var windowSize = function (withScrollBar) {
-    var wid = 0;
-    var hei = 0;
-    if (typeof window.innerWidth != "undefined") {
-      wid = window.innerWidth;
-      hei = window.innerHeight;
-    } else {
-      if (document.documentElement.clientWidth == 0) {
-        wid = document.body.clientWidth;
-        hei = document.body.clientHeight;
-      } else {
-        wid = document.documentElement.clientWidth;
-        hei = document.documentElement.clientHeight;
-      }
-    }
-    return {
-      width: wid - (withScrollBar ? wid - document.body.offsetWidth + 1 : 0),
-      height: hei,
-    };
-  };
-
-  if (scene.background) {
-    var size = windowSize(true);
-    var factor =
-      backgroundImageWidth / backgroundImageHeight / (size.width / size.height);
-
-    scene.background.offset.x = factor > 1 ? (1 - 1 / factor) / 2 : 0;
-    scene.background.offset.y = factor > 1 ? 0 : (1 - factor) / 2;
-
-    scene.background.repeat.x = factor > 1 ? 1 / factor : 1;
-    scene.background.repeat.y = factor > 1 ? 1 : factor;
-  }
 }
 
 window.addEventListener("resize", function () {
